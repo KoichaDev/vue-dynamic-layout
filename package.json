@@ -3,7 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "vue-cli-service serve",
+		"json:server": "json-server --watch src/data/todos.json",
+		"vue:serve": "vue-cli-service serve && json:server",
+		"dev": "concurrently --kill-others \"npm run vue:serve\" \"npm run json:server\"",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint"
 	},
