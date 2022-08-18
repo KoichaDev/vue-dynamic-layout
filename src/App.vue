@@ -1,5 +1,5 @@
 <template>
-	<div></div>
+	<fragment>aaisdjioasdjioasj</fragment>
 </template>
 
 <script>
