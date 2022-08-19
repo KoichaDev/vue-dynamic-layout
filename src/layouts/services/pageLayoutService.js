@@ -1,9 +1,11 @@
 import { reactive } from 'vue';
+
 // Available layouts
 export const LAYOUTS = {
     standard: Symbol('standard'),
     auth: Symbol('auth'),
 };
+
 const initialState = {
     layout: LAYOUTS.standard,
 };
@@ -16,6 +18,7 @@ const state = reactive(initialState);
 /**
  * Computed that allows consuming the current layout value
  */
+
 export const layoutComputed = {
     layout: {
         get() {
@@ -26,10 +29,12 @@ export const layoutComputed = {
         },
     },
 };
+
 /**
  * Sets new layouts value
  * @param {Symbol} layoutType
  */
+
 export const setLayout = (layoutType) => {
     state.layout = layoutType;
 };
