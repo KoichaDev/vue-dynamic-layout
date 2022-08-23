@@ -1,23 +1,40 @@
 <template>
-	<router-link
-		:is="tag"
-		:to="to"
-		:class="[$style.baseButton, $style[`baseButton--${variant}`], buttonClassName]"
-	>
-		<slot />
-	</router-link>
+	<fragment v-if="tag === 'button'">
+		<button
+			role="button"
+			:class="[$style.baseButton, $style[`baseButton--${variant}`], buttonClassName]"
+		>
+			<slot />
+		</button>
+	</fragment>
+
+	<fragment v-else>
+		<router-link
+			:is="tag"
+			:to="to"
+			role="button"
+			:class="[$style.baseButton, $style[`baseButton--${variant}`], buttonClassName]"
+		>
+			<slot />
+		</router-link>
+	</fragment>
 </template>
 
 <script>
 export default {
 	name: 'BaseButton',
 	props: {
+		role: {
+			type: String,
+			default: 'a',
+		},
 		tag: {
 			type: String,
-			default: 'button',
+			default: 'a',
 		},
 		to: {
 			type: String,
+			require,
 		},
 		variant: {
 			type: String,
