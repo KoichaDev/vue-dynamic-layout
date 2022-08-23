@@ -3,8 +3,13 @@ import App from './App.vue'
 import router from './router'
 import './plugins';
 
-Vue.config.productionTip = false
+// Helper function
+import { registerBaseComponents } from './helpers/registerBaseComponents';
 
+// Automatically import and register Base components
+registerBaseComponents(Vue)
+
+Vue.config.productionTip = false
 
 new Vue({
   router,
