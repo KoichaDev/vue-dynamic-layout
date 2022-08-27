@@ -9,25 +9,14 @@
 			</button>
 		</div>
 		<Layout class="mx-auto max-w-7xl">
+			<template #header> </template>
 			<!-- Layout content slots -->
 		</Layout>
 	</div>
 </template>
 
 <script>
-import Layout from '@/layouts/Layout';
-import { useLayout } from '@/layouts/composables/useLayout';
-
 export default {
-	components: {
-		Layout,
-	},
-	setup() {
-		const { setLayout, LAYOUTS } = useLayout();
-		return {
-			setLayout,
-			LAYOUTS,
-		};
-	},
+	name: 'ViewAuth',
 };
 </script>

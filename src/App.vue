@@ -10,4 +10,6 @@ export default {
 };
 </script>
 
-<style module></style>
+<style>
+@import './styles/_reset.scss';
+</style>

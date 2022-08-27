@@ -1,11 +1,11 @@
 import { ref } from 'vue';
 
 export const LAYOUTS = {
-    standard: Symbol('standard'),
     auth: Symbol('auth'),
+    login: Symbol('login'),
 };
 
-const layout = ref(LAYOUTS.standard);
+const layout = ref(LAYOUTS.auth);
 
 const setLayout = (layoutType) => {
     layout.value = layoutType;

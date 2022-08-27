@@ -1,13 +1,12 @@
 import { camelCase, upperFirst } from 'lodash-es';
 
 export const registerBaseComponents = (vm) => {
+
     try {
         // Require base component context
         const requireComponent = require.context('@/components/base', true, /Base[\w-]+\.vue$/);
 
         requireComponent.keys().forEach((filePath) => {
-
-            console.log(filePath);
             // Get component config
             const componentConfig = requireComponent(filePath);
             // Get filename from the filePath

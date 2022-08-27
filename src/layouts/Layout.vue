@@ -12,7 +12,7 @@
 
 <script>
 import { computed } from 'vue';
-import StandardLayout from './components/StandardLayout';
+import DashboardLayout from './components/DashboardLayout';
 import AuthLayout from './components/AuthLayout';
 import { useLayout } from './composables/useLayout';
 
@@ -20,7 +20,11 @@ export default {
 	name: 'LayoutsLayout',
 	setup() {
 		const { layout, LAYOUTS } = useLayout();
-		const layoutComponents = { [LAYOUTS.standard]: StandardLayout, [LAYOUTS.auth]: AuthLayout };
+
+		const layoutComponents = {
+			[LAYOUTS.dashBoard]: DashboardLayout,
+			[LAYOUTS.auth]: AuthLayout,
+		};
 		const currentLayoutComponent = computed(() => layoutComponents[layout.value]);
 		return { currentLayoutComponent };
 	},
